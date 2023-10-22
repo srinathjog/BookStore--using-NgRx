@@ -1,0 +1,44 @@
+<form [formGroup]="bookform" (ngSubmit)="SaveBook()">
+<mat-card>
+    <mat-card-header>
+       <h1>{{title}}</h1>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field *ngIf="isedit">
+        <mat-label>Code</mat-label>
+        <input formControlName="code" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput>
+      </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>Country</mat-label>
+        <input formControlName="country" matInput>
+      </mat-form-field>
+      <mat-form-field class="mat-50">
+        <mat-label>Language</mat-label>
+        <input formControlName="language" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Pages</mat-label>
+        <textarea formControlName="pages" matInput></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Author</mat-label>
+        <textarea formControlName="author" matInput></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Year</mat-label>
+        <textarea formControlName="year" matInput></textarea>
+      </mat-form-field>
+      <div class="div-50">
+        <mat-checkbox formControlName="status">Is Active</mat-checkbox>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <a (click)="ClosePopup()" mat-raised-button color="accent" >Close</a>
+    </mat-card-actions>
+</mat-card>
+</form>
